@@ -1,2 +1,2 @@
 # BREM-PHP
-Simulator of BREM machine on PHP 8.
+![Screenshot from IE 6](doc/screenshot.png)
