@@ -822,7 +822,7 @@ if (!empty($console_output)) {
   </form>
   <br>
   <b><i>Memory Operation</i></b>
-  <form method="post">
+  <form method="post" action="index.php">
         <input type='hidden' name='action' id='action' value=''>
         <button type='submit' onclick="document.getElementById('action').value='save'">Save DZU</button>
         <button type='submit' onclick="document.getElementById('action').value='reset'">Reset DZU</button>

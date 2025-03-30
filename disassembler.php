@@ -21,8 +21,9 @@ function memory_dump($values) {
     for ($i = 0; $i < count($values); $i += 8) {
         $chunk = array_slice($values, $i, 8);
         $hex = implode(" ", array_map(fn($b) => sprintf("%04X", $b), $chunk));
+        // Преобразуем 16-битное число в символ, если это допустимый ASCII-символ
         $ascii = implode("", array_map(fn($b) => ($b >= 32 && $b <= 126) ? chr($b) : ".", $chunk));
-        $output .= sprintf("%04X: %-39s | %-8s\n", $i, str_pad($hex, 39, " "), str_pad($ascii, 8, " "));
+        $output .= sprintf("%04X: %-39s | %-8s\n", $i, str_pad($hex, 39, " "), $ascii);
     }
     $output .= "</pre>";
     return $output;
