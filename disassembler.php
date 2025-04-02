@@ -5,7 +5,7 @@ $register_count = 162;
 
 $values = isset($_SESSION['registers']) ? $_SESSION['registers'] : array_fill(0, $register_count, 0);
 
-$registers = array_map(fn($i) => "Р-" . $i, range(0, $register_count - 1));
+$registers = array_map(fn($i) => "Р-" . $i + 1, range(0, $register_count - 1));
 
 function disassemble($registers, $values) {
     $output = "<div class=\"disassembler\"><pre>Disassembler Output:\n";
